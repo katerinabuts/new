@@ -11,7 +11,7 @@ const dbcontext = require('./context/db')(Sequelize, config);
 
 const domainService = require('./services/domain')(dbcontext.domain, dbcontext.user, errors);
 const authService = require('./services/auth')(dbcontext.user, dbcontext.role, errors);
-const cacheService = require('./services/cache');//
+const cacheService = require('./services/cache');
 
 const apiController = require('./controllers/api')(domainService, authService, cacheService, config);
 
